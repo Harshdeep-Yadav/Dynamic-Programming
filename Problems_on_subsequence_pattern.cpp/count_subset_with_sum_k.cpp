@@ -30,7 +30,6 @@ int f(int ind,int k,vector<int>&num,<vector<int>> &dp)
     
     return dp[ind][k]=pick+notpick;
 }
-//`````````````````````````tabulation`````````````````````
 int findWays(vector<int> &num, int tar)
 {
     int n=num.size();
@@ -38,8 +37,8 @@ int findWays(vector<int> &num, int tar)
     return f(n-1,tar,num,dp);
 }
 
+//`````````````````````````tabulation`````````````````````
 
-//`````````````````````space opt ``````````````
 int findWays(vector<int> &num, int tar)
 {
     int n=num.size();
@@ -60,6 +59,7 @@ int findWays(vector<int> &num, int tar)
 }
 
 
+//`````````````````````space opt ``````````````
 
 
 int findWays(vector<int> &num, int tar)
