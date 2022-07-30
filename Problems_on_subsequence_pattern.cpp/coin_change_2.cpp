@@ -40,3 +40,37 @@ public:
     }
 };
 
+// ```````````````````Tabulation solution ```````````````
+
+class Solution {
+public:
+  
+    int change(int amount, vector<int>& coins) {
+//         int n=coins.size();
+//         vector<vector<int>>dp(n,vector<int>(amount+1,0));
+//         // base case 
+         
+//         for(int a=0;a<=amount;a++){
+//             dp[0][a]= (amount%coins[0]==0);
+//         }
+
+//         for(int ind=1;ind<n;ind++){
+//             for(int a=0;a<=amount;a++){
+//                 int nottake=dp[ind-1][a];
+//                 int take=0;
+//                 if(coins[ind]<=a)
+//                 take=dp[ind][a-coins[ind]]; 
+//                 dp[ind][a]=take+nottake;
+//             }
+//         }
+//         return dp[n-1][amount];
+        vector<int>dp(amount+1, 0);
+        dp[0] = 1;
+        for(int i = 0; i<coins.size(); i++){
+            for(int j = coins[i]; j<= amount; j++){
+                dp[j] += dp[j - coins[i]];
+            }
+        }
+        return dp[amount];
+    }
+};
