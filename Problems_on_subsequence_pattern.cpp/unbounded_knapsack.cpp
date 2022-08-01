@@ -82,7 +82,7 @@ vector<int> prev(W+1,0),curr(W+1,0);
     //Base Condition
     
     for(int i=wt[0]; i<=W; i++){
-        dp[0][i] = ((int) i/wt[0]) * val[0];
+        prev[i] = ((int) i/wt[0]) * val[0];
     }
     
     for(int ind =1; ind<n; ind++){
